@@ -1,0 +1,6 @@
+.border-gradient {
+  border-color: linear-gradient(90deg, rgba(10,33,79,1) 0%, rgba(165,18,187,1) 42%, rgba(209,136,16,1) 100%);
+  border-style:solid;
+
+  border-width:2px;
+}

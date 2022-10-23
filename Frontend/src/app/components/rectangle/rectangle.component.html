@@ -1,0 +1,39 @@
+<app-canvas #canvas [width]="this.canvasWidth" [heigth]="this.canvasHeigth">
+
+  <!--gragient-->
+  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="gradient" x1="0%" y1="25%" x2="50%" y2="75%">
+        <stop offset="0%" stop-color="#d18810" />
+        <stop offset="90%" stop-color="#a512bb" />
+        <stop offset="100%" stop-color="#103d99" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+
+  <!--rectangle-->
+  <svg:rect class="border-gradient" [attr.x]="this.rectangle.getX()"
+            [attr.y]="this.rectangle.getY()"
+            [attr.width]="this.rectangle.getWidth()"
+            [attr.height]="this.rectangle.getHeigth()"
+            fill="rgba(255, 255, 255, 0)"
+            stroke="url(#gradient)"
+            stroke-width="4"
+            fill-opacity="2">
+    </rect>
+
+    <svg:text stroke="white" [attr.x]="this.rectangle.x1+this.rectangle.getWidth() / 2" [attr.y]="this.rectangle.y1" class="small">{{this.perimetr}}</svg:text>
+    <svg:text stroke="white" [attr.x]="this.rectangle.x2" [attr.y]="this.rectangle.y2" class="small">x2 -y2</svg:text>
+    <svg:text stroke="white" [attr.x]="this.rectangle.x1" [attr.y]="this.rectangle.y1" class="small">x1 -y1</svg:text>
+    <svg:text stroke="white" [attr.x]="this.rectangle.x2" [attr.y]="this.rectangle.y1" class="small">x2 -y1</svg:text>
+    <svg:text stroke="white" [attr.x]="this.rectangle.x1" [attr.y]="this.rectangle.y2" class="small">x1 -y2</svg:text>
+
+
+
+</app-canvas>
+<!--<h3></h3>
+<h3 class="text-white"> ===  {{canvas.left}}</h3>
+<h3 class="text-white"> ===  {{canvas.top}}</h3>-->
+
+
