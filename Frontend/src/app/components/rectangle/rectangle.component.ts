@@ -14,20 +14,41 @@ export class RectangleComponent implements OnInit {
   //@ViewChild('canvas', { read: CanvasComponent })
   //public canvas: CanvasComponent;
 
-  constructor(private rectangleHttpService: RectangleHttpService) { }
+  constructor(private rectangleHttpService: RectangleHttpService) {
+    this.rectangleHttpService.getRectangle().subscribe(res => {
+      console.log(res);
+      var resp = res as Rectangle;
+      this.rectangle.x1 = resp.x1;
+      this.rectangle.x2 = resp.x2;
+      this.rectangle.y1 = resp.y1;
+      this.rectangle.y2 = resp.y2;
+      this.isRectangleCreated = true;
+    },
+      err => {
+        // alert(err.message);
+      });
+
+  }
   public rectangle: Rectangle = new Rectangle();
 
   ngOnInit(): void {
-    //get rectangle from backend
+  
+  }
+
+  public f() {
     this.rectangleHttpService.getRectangle().subscribe(res => {
-      console.log(res);//remove
-      this.rectangle = res as Rectangle;
+      console.log(res);
+      var resp = res as Rectangle;
+      this.rectangle.x1 = resp.x1;
+      this.rectangle.x2 = resp.x2;
+      this.rectangle.y1 = resp.y1;
+      this.rectangle.x2 = resp.y2;
     },
       err => {
        // alert(err.message);
-      });
-  }
+       });
 
+  }
   public yResize: number;
   public xResize: number
 
@@ -68,7 +89,11 @@ export class RectangleComponent implements OnInit {
     this.isRectangleCreated = true;
     this.isEdited = false;
     //save rectangle
+
     this.rectangleHttpService.saveRectangle(this.rectangle).subscribe(res => {
+      console.log("saved");
+      console.log(this.rectangle);
+
       console.log(res);
     }, err => {
       console.log(err);

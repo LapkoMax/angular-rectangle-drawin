@@ -21,11 +21,11 @@ export class Rectangle implements RectangleForCreationDTO {
     return this.getHeigth() * this.getWidth()
   }
 
-  getX(): number {
+  public getX(): number {
     return Math.min(this.x1, this.x2);
   }
 
-  getY(): number {
+  public getY(): number {
     return Math.min(this.y1, this.y2);
   }
 }

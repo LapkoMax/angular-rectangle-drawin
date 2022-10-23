@@ -1,1 +1,1 @@
-export const backendDomain = 'localhost:5000';
+export const backendDomain = 'https://localhost:44327';
