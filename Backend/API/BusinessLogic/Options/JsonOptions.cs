@@ -1,4 +1,4 @@
-﻿namespace BusinessLogic.Services.Options
+﻿namespace BusinessLogic.Options
 {
     public static class JsonOptions
     {

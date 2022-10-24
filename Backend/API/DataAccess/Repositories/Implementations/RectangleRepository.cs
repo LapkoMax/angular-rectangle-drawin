@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
-using BusinessLogic.Services;
+using BusinessLogic.Services.Abstractions;
+using DataAccess.Repositories.Abstractions;
 using Models.DTO;
 using Models.Entities;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repositories.Impl
+namespace DataAccess.Repositories.Implementations
 {
     public class RectangleRepository : IRectangleRepository
     {
@@ -27,7 +28,7 @@ namespace DataAccess.Repositories.Impl
             return _mapper.Map<RectangleDTO>(rect);
         }
 
-        public async Task SaveRectangleAsync(RectangleForCreationDTO rectangle)
+        public async Task SaveRectangleAsync(RectangleDTO rectangle)
         {
             var rect = _mapper.Map<Rectangle>(rectangle);
 

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace BusinessLogic.Services
+namespace BusinessLogic.Services.Abstractions
 {
     public interface IJsonService
     {

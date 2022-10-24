@@ -1,4 +1,4 @@
-﻿using DataAccess.Repositories;
+﻿using DataAccess.Repositories.Abstractions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models.DTO;
@@ -26,7 +26,7 @@ namespace API.Controllers
         {
             var rect = await _repository.Rectangle.GetRectangleAsync();
 
-            if(rect == null)
+            if(rect is null)
             {
                 return BadRequest();
             }
@@ -37,7 +37,7 @@ namespace API.Controllers
         [HttpPost]
         [SwaggerResponse(StatusCodes.Status204NoContent, Type = typeof(Response))]
         [SwaggerOperation(summary: "Save new rectangle", OperationId = "SaveRectangle")]
-        public async Task<IActionResult> SaveRectangle(RectangleForCreationDTO rectangle)
+        public async Task<IActionResult> SaveRectangle(RectangleDTO rectangle)
         {
             await _repository.Rectangle.SaveRectangleAsync(rectangle);
 

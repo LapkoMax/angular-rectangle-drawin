@@ -1,4 +1,4 @@
-﻿namespace DataAccess.Repositories
+﻿namespace DataAccess.Repositories.Abstractions
 {
     public interface IRepositoryManager
     {

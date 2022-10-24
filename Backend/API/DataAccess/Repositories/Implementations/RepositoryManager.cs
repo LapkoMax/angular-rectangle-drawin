@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
-using BusinessLogic.Services;
+using BusinessLogic.Services.Abstractions;
+using DataAccess.Repositories.Abstractions;
 
-namespace DataAccess.Repositories.Impl
+namespace DataAccess.Repositories.Implementations
 {
     public class RepositoryManager : IRepositoryManager
     {
@@ -20,7 +21,7 @@ namespace DataAccess.Repositories.Impl
         {
             get
             {
-                if(_rectangleRepository == null)
+                if (_rectangleRepository == null)
                 {
                     _rectangleRepository = new RectangleRepository(_jsonService, _mapper);
                 }

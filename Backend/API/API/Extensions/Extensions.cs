@@ -1,8 +1,8 @@
 ﻿using BusinessLogic.Mappers;
-using BusinessLogic.Services;
-using BusinessLogic.Services.Impl;
-using DataAccess.Repositories;
-using DataAccess.Repositories.Impl;
+using BusinessLogic.Services.Abstractions;
+using BusinessLogic.Services.Implementations;
+using DataAccess.Repositories.Abstractions;
+using DataAccess.Repositories.Implementations;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 

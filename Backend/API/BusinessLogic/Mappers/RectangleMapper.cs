@@ -8,8 +8,7 @@ namespace BusinessLogic.Mappers
     {
         public RectangleMapper()
         {
-            CreateMap<Rectangle, RectangleDTO>();
-            CreateMap<RectangleForCreationDTO, Rectangle>();
+            CreateMap<Rectangle, RectangleDTO>().ReverseMap();
         }
     }
 }

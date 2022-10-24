@@ -23,17 +23,16 @@
             fill-opacity="2">
     </rect>
 
-    <svg:text stroke="white" [attr.x]="this.rectangle.x1+this.rectangle.getWidth() / 2" [attr.y]="this.rectangle.y1" class="small">{{this.perimetr}}</svg:text>
+    <svg:text *ngIf="this.rectangle.x1<this.rectangle.x2;else elseBlock" stroke="white" [attr.x]="this.rectangle.x1+this.rectangle.getWidth() / 2" [attr.y]="this.rectangle.y1" class="small">{{this.perimetr}}</svg:text>
+
+    <ng-template #elseBlock>
+      <svg:text stroke="white" [attr.x]="this.rectangle.x2+this.rectangle.getWidth() / 2" [attr.y]="this.rectangle.y1" class="small">{{this.perimetr}}</svg:text>
+    </ng-template>
+
     <svg:text stroke="white" [attr.x]="this.rectangle.x2" [attr.y]="this.rectangle.y2" class="small">x2 -y2</svg:text>
     <svg:text stroke="white" [attr.x]="this.rectangle.x1" [attr.y]="this.rectangle.y1" class="small">x1 -y1</svg:text>
     <svg:text stroke="white" [attr.x]="this.rectangle.x2" [attr.y]="this.rectangle.y1" class="small">x2 -y1</svg:text>
     <svg:text stroke="white" [attr.x]="this.rectangle.x1" [attr.y]="this.rectangle.y2" class="small">x1 -y2</svg:text>
 
-
-
 </app-canvas>
-<!--<h3></h3>
-<h3 class="text-white"> ===  {{canvas.left}}</h3>
-<h3 class="text-white"> ===  {{canvas.top}}</h3>-->
-<button (click)="f()">11</button>
 

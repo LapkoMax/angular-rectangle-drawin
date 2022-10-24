@@ -1,8 +1,13 @@
-﻿using Models.Entities;
-
-namespace Models.DTO
+﻿namespace Models.DTO
 {
-    public class RectangleDTO : Rectangle
+    public record RectangleDTO
     {
+        public double X1 { get; init; }
+
+        public double Y1 { get; init; }
+
+        public double X2 { get; init; }
+
+        public double Y2 { get; init; }
     }
 }
